@@ -309,7 +309,7 @@ class Cache(object):
                 if callable(key_prefix):
                     cache_key = key_prefix()
                 elif '%s' in key_prefix:
-                    cache_key = key_prefix % request.path
+                    cache_key = key_prefix % request.full_path
                 else:
                     cache_key = key_prefix
 
